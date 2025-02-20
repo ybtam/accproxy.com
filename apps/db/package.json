@@ -1,0 +1,38 @@
+{
+  "name": "@apps/db",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "dotenv -e ../../.env drizzle-kit studio --port 4001",
+    "db:push": "dotenv -e ../../.env -- drizzle-kit push",
+    "migration:new": "dotenv -e ../../.env -- drizzle-kit generate",
+    "migrate:up": "dotenv -e ../../.env -- drizzle-kit migrate",
+    "lint": "eslint './**'",
+    "lint:fix": "eslint './**' --fix"
+  },
+  "keywords": [],
+  "dependencies": {
+    "drizzle-orm": "^0.39.3",
+    "pg": "^8.13.3",
+    "drizzle-zod": "^0.7.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
+    "@repo/config-prettier": "workspace:*",
+    "@types/node": "^22.13.4",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1"
+  }
+}
