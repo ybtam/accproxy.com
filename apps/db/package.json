@@ -9,7 +9,7 @@
     ".": "./src/index.ts"
   },
   "scripts": {
-    "dev": "dotenv -e ../../.env drizzle-kit studio --port 4001",
+    "dev": "drizzle-kit studio --port 4001",
     "db:push": "dotenv -e ../../.env -- drizzle-kit push",
     "migration:new": "dotenv -e ../../.env -- drizzle-kit generate",
     "migrate:up": "dotenv -e ../../.env -- drizzle-kit migrate",
