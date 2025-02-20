@@ -23,7 +23,8 @@
     "lint": "eslint './**'",
     "lint:fix": "eslint './**' --fix",
     "dev": "npx @tailwindcss/cli -i src/styles/style.css -o ./dist/index.css --watch",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "shadcn": "pnpm dlx shadcn@canary"
   },
   "peerDependencies": {
     "@hookform/resolvers": "^4.0.0",
