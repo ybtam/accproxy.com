@@ -4,7 +4,12 @@
     "**/.env.*local",
     ".env"
   ],
-  "globalEnv": [],
+  "globalEnv": [
+    "DB_HOST",
+    "DB_USERNAME",
+    "DB_PASSWORD",
+    "DB_NAME"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
