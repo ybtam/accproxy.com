@@ -1,4 +1,4 @@
-import { db, media } from '@apps/db'
+import { db, files } from '@apps/db'
 import { eq } from 'drizzle-orm'
 import {
   GraphQLFieldConfig,
@@ -16,30 +16,33 @@ export const generatePresignedURL: GraphQLFieldConfig<
   any,
   any,
   {
-    media: {
+    file: {
       id: number
     }
   }
 > = {
   args: {
-    media: {
+    file: {
       type: new GraphQLNonNull(
         new GraphQLInputObjectType({
           fields: {
             id: { type: new GraphQLNonNull(GraphQLInt) },
           },
-          name: 'MediaIdInput',
+          name: 'FileIdInput',
         }),
       ),
     },
   },
-  resolve: async (_, { media: { id } }, context) => {
-    const selectMedia = await db.select().from(media).where(eq(media.id, id)).execute()
-    if (!selectMedia.length) {
+  resolve: async (_, { file: { id } }, context) => {
+    const selectedFile = await db.select().from(files).where(eq(files.id, id)).execute()
+    if (!selectedFile.length) {
       throw new Error('Media not found')
     }
 
-    return await minIoHandler.presignURL(selectMedia[0].url)
+    return ''
+
+    //todo
+    // return await minIoHandler.presignURL(selectMedia[0].file)
   },
   type: GraphQLString,
 }
