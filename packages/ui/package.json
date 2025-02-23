@@ -38,21 +38,24 @@
   },
   "devDependencies": {
     "@repo/config-eslint": "workspace:*",
-    "@repo/config-typescript": "workspace:*",
     "@repo/config-prettier": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
     "@tailwindcss/cli": "^4.0.7",
+    "@tailwindcss/postcss": "^4.0.7",
     "@types/node": "^22.13.4",
     "eslint": "^9.20.1",
-    "@tailwindcss/postcss": "^4.0.7",
     "prettier-plugin-tailwindcss": "^0.6.11"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/typography": "^0.5.16",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "react-hook-form": "^7.54.2",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
-    "lucide-react": "^0.475.0"
+    "zod": "^3.24.2"
   }
 }
