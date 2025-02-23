@@ -5,7 +5,7 @@ export const { entities } = buildSchema(db, {
   relationsDepthLimit: 1,
 })
 
-export const inputs = entities.inputs
+export const { inputs } = entities
 
 export const {...mutations } = entities.mutations
 
