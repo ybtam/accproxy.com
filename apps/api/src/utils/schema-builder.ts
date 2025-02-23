@@ -6,7 +6,7 @@ import * as UserAuthMutations from '../resolvers/user/auth/mutation'
 import * as UserAuthQuery from '../resolvers/user/auth/query'
 import {entities, inputs, mutations, queries} from './drizzle-schema'
 import { FileScalar } from './scalars'
-import {DefaultContext, Maybe} from "@envelop/types";
+import {Maybe} from "@envelop/types";
 import {GraphQLFieldConfig, ThunkObjMap} from "graphql/type/definition";
 
 const types = [...Object.values(entities.types), ...Object.values(inputs), FileScalar]
