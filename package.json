@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "dotenv -e .env -- turbo run dev"
+    "dev": "dotenv -e .env -- turbo run dev",
+    "lint:fix": "turbo run lint:fix"
   },
   "devDependencies": {
     "dotenv-cli": "^8.0.0",
