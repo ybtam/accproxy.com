@@ -4,6 +4,7 @@ import "@/style/globals.css";
 import {Provider} from "@/providers/provider";
 import {ReactNode} from "react";
 import {auth} from "@repo/sdk/auth";
+import {cn} from "@repo/ui/lib";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +33,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn(geistSans.variable, geistMono.variable, 'antialiased', 'p-4')}
       >
       <Provider>
         {
