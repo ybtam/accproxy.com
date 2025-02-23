@@ -1,0 +1,25 @@
+meta {
+  name: login
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: http://localhost:4000/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation{
+    login(values: {
+      email: "test@test.test",
+      password: "test"
+    }) {
+      id
+      token
+      lastName
+      firstName
+    }
+  }
+}

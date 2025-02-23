@@ -1,0 +1,26 @@
+meta {
+  name: Me
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: http://localhost:4000/graphql
+  body: graphql
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTc0MDI1NjUxNCwiaXNzIjoicW1zLnBhd3Bhdy50ZWNoIiwic3ViIjoidXNlciJ9.lWE7_sW3sNYJUtFhmwtumrfZOqowQf1gJoZlzM5gems
+}
+
+body:graphql {
+  {
+    me{
+      id
+      lastName
+      firstName
+      email
+    }
+  }
+}
