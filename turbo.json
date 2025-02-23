@@ -8,7 +8,9 @@
     "DB_HOST",
     "DB_USERNAME",
     "DB_PASSWORD",
-    "DB_NAME"
+    "DB_NAME",
+    "JWT_TOKEN",
+    "TOKEN_ISSUER"
   ],
   "tasks": {
     "build": {

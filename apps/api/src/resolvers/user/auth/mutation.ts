@@ -46,7 +46,7 @@ export const login: GraphQLFieldConfig<any, any, { values: { email: string; pass
       }
 
       const token = jwt.sign({ userId: user.id }, process.env.JWT_TOKEN as string, {
-        issuer: 'qms.pawpaw.tech', //todo move it to env
+        issuer: process.env.TOKEN_ISSUER, //todo move it to env
         subject: 'user',
       })
 
@@ -86,7 +86,7 @@ export const register: GraphQLFieldConfig<any, any, { values: typeof users.$infe
     }
 
     const token = jwt.sign({ userId: newUser.id }, process.env.JWT_TOKEN as string, {
-      issuer: 'qms.pawpaw.tech',
+      issuer: process.env.TOKEN_ISSUER,
       subject: 'user',
     })
 
