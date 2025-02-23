@@ -1,0 +1,38 @@
+{
+  "name": "@repo/sdk",
+  "version": "1.1.0",
+  "description": "",
+  "scripts": {
+    "lint": "eslint './**'",
+    "lint:fix": "eslint './**' --fix"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "private": true,
+  "exports": {
+    ".": "./src/index.ts",
+    "./auth": "./src/auth/index.ts"
+  },
+  "peerDependencies": {
+    "@types/react": "^19.0.2",
+    "next": "15.1.0",
+    "next-auth": "5.0.0-beta.25",
+    "react": "^19.0.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.1",
+    "@apollo/experimental-nextjs-app-support": "^0.11.9",
+    "apollo-upload-client": "^18.0.1"
+  },
+  "devDependencies": {
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-prettier": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
+    "@repo/graphql-code-gen": "workspace:*",
+    "@types/apollo-upload-client": "^18.0.0",
+    "@types/node": "^22.13.4",
+    "eslint": "^9.20.1"
+  }
+}

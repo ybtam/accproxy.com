@@ -319,6 +319,10 @@ type CompaniesUserRelation {
 """Custom scalar to handle file uploads"""
 scalar File
 
+input FileIdInput {
+  id: Int!
+}
+
 input FileTagsFileIdFilters {
   OR: [FileTagsFileIdfiltersOr!]
   eq: Int
@@ -1021,8 +1025,30 @@ type Me {
 }
 
 type Mutation {
+  deleteFromCompanies(where: CompaniesFilters): [CompaniesItem!]!
+  deleteFromFileTags(where: FileTagsFilters): [FileTagsItem!]!
+  deleteFromFiles(where: FilesFilters): [FilesItem!]!
+  deleteFromTags(where: TagsFilters): [TagsItem!]!
+  deleteFromUsers(where: UsersFilters): [UsersItem!]!
+  generatePresignedURL(file: FileIdInput!): String
+  insertIntoCompanies(values: [CompaniesInsertInput!]!): [CompaniesItem!]!
+  insertIntoCompaniesSingle(values: CompaniesInsertInput!): CompaniesItem
+  insertIntoFileTags(values: [FileTagsInsertInput!]!): [FileTagsItem!]!
+  insertIntoFileTagsSingle(values: FileTagsInsertInput!): FileTagsItem
+  insertIntoFiles(values: [FilesInsertInput!]!): [FilesItem!]!
+  insertIntoFilesSingle(values: FilesInsertInput!): FilesItem
+  insertIntoTags(values: [TagsInsertInput!]!): [TagsItem!]!
+  insertIntoTagsSingle(values: TagsInsertInput!): TagsItem
+  insertIntoUsers(values: [UsersInsertInput!]!): [UsersItem!]!
+  insertIntoUsersSingle(values: UsersInsertInput!): UsersItem
   login(values: LoginInput!): LoginOutput
   register(values: UsersInsertInput): RegisterOutput
+  updateCompanies(set: CompaniesUpdateInput!, where: CompaniesFilters): [CompaniesItem!]!
+  updateFileTags(set: FileTagsUpdateInput!, where: FileTagsFilters): [FileTagsItem!]!
+  updateFiles(set: FilesUpdateInput!, where: FilesFilters): [FilesItem!]!
+  updateTags(set: TagsUpdateInput!, where: TagsFilters): [TagsItem!]!
+  updateUsers(set: UsersUpdateInput!, where: UsersFilters): [UsersItem!]!
+  uploadFile(file: File): FilesItem
 }
 
 """Order by direction"""
@@ -1034,7 +1060,17 @@ enum OrderDirection {
 }
 
 type Query {
+  companies(limit: Int, offset: Int, orderBy: CompaniesOrderBy, where: CompaniesFilters): [CompaniesSelectItem!]!
+  companiesSingle(offset: Int, orderBy: CompaniesOrderBy, where: CompaniesFilters): CompaniesSelectItem
+  fileTags(limit: Int, offset: Int, orderBy: FileTagsOrderBy, where: FileTagsFilters): [FileTagsSelectItem!]!
+  fileTagsSingle(offset: Int, orderBy: FileTagsOrderBy, where: FileTagsFilters): FileTagsSelectItem
+  files(limit: Int, offset: Int, orderBy: FilesOrderBy, where: FilesFilters): [FilesSelectItem!]!
+  filesSingle(offset: Int, orderBy: FilesOrderBy, where: FilesFilters): FilesSelectItem
   me: Me
+  tags(limit: Int, offset: Int, orderBy: TagsOrderBy, where: TagsFilters): [TagsSelectItem!]!
+  tagsSingle(offset: Int, orderBy: TagsOrderBy, where: TagsFilters): TagsSelectItem
+  users(limit: Int, offset: Int, orderBy: UsersOrderBy, where: UsersFilters): [UsersSelectItem!]!
+  usersSingle(offset: Int, orderBy: UsersOrderBy, where: UsersFilters): UsersSelectItem
 }
 
 type RegisterOutput {

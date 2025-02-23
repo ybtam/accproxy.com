@@ -23,6 +23,8 @@ const config: CodegenConfig = {
       documents: [
           '../../apps/**/web/src/**/*.tsx',
           '../../apps/**/web/src/**/*.ts',
+          '../sdk/src/**/*.ts',
+          '../sdk/src/**/*.tsx',
       ]
     },
   }

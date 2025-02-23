@@ -1,4 +1,5 @@
 /* eslint-disable */
+import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -345,6 +346,10 @@ export type CompaniesUserRelation = {
   password: Scalars['String']['output'];
   /** Date */
   updatedAt?: Maybe<Scalars['String']['output']>;
+};
+
+export type FileIdInput = {
+  id: Scalars['Int']['input'];
 };
 
 export type FileTagsFileIdFilters = {
@@ -1080,8 +1085,110 @@ export type Me = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  deleteFromCompanies: Array<CompaniesItem>;
+  deleteFromFileTags: Array<FileTagsItem>;
+  deleteFromFiles: Array<FilesItem>;
+  deleteFromTags: Array<TagsItem>;
+  deleteFromUsers: Array<UsersItem>;
+  generatePresignedURL?: Maybe<Scalars['String']['output']>;
+  insertIntoCompanies: Array<CompaniesItem>;
+  insertIntoCompaniesSingle?: Maybe<CompaniesItem>;
+  insertIntoFileTags: Array<FileTagsItem>;
+  insertIntoFileTagsSingle?: Maybe<FileTagsItem>;
+  insertIntoFiles: Array<FilesItem>;
+  insertIntoFilesSingle?: Maybe<FilesItem>;
+  insertIntoTags: Array<TagsItem>;
+  insertIntoTagsSingle?: Maybe<TagsItem>;
+  insertIntoUsers: Array<UsersItem>;
+  insertIntoUsersSingle?: Maybe<UsersItem>;
   login?: Maybe<LoginOutput>;
   register?: Maybe<RegisterOutput>;
+  updateCompanies: Array<CompaniesItem>;
+  updateFileTags: Array<FileTagsItem>;
+  updateFiles: Array<FilesItem>;
+  updateTags: Array<TagsItem>;
+  updateUsers: Array<UsersItem>;
+  uploadFile?: Maybe<FilesItem>;
+};
+
+
+export type MutationDeleteFromCompaniesArgs = {
+  where?: InputMaybe<CompaniesFilters>;
+};
+
+
+export type MutationDeleteFromFileTagsArgs = {
+  where?: InputMaybe<FileTagsFilters>;
+};
+
+
+export type MutationDeleteFromFilesArgs = {
+  where?: InputMaybe<FilesFilters>;
+};
+
+
+export type MutationDeleteFromTagsArgs = {
+  where?: InputMaybe<TagsFilters>;
+};
+
+
+export type MutationDeleteFromUsersArgs = {
+  where?: InputMaybe<UsersFilters>;
+};
+
+
+export type MutationGeneratePresignedUrlArgs = {
+  file: FileIdInput;
+};
+
+
+export type MutationInsertIntoCompaniesArgs = {
+  values: Array<CompaniesInsertInput>;
+};
+
+
+export type MutationInsertIntoCompaniesSingleArgs = {
+  values: CompaniesInsertInput;
+};
+
+
+export type MutationInsertIntoFileTagsArgs = {
+  values: Array<FileTagsInsertInput>;
+};
+
+
+export type MutationInsertIntoFileTagsSingleArgs = {
+  values: FileTagsInsertInput;
+};
+
+
+export type MutationInsertIntoFilesArgs = {
+  values: Array<FilesInsertInput>;
+};
+
+
+export type MutationInsertIntoFilesSingleArgs = {
+  values: FilesInsertInput;
+};
+
+
+export type MutationInsertIntoTagsArgs = {
+  values: Array<TagsInsertInput>;
+};
+
+
+export type MutationInsertIntoTagsSingleArgs = {
+  values: TagsInsertInput;
+};
+
+
+export type MutationInsertIntoUsersArgs = {
+  values: Array<UsersInsertInput>;
+};
+
+
+export type MutationInsertIntoUsersSingleArgs = {
+  values: UsersInsertInput;
 };
 
 
@@ -1094,6 +1201,41 @@ export type MutationRegisterArgs = {
   values?: InputMaybe<UsersInsertInput>;
 };
 
+
+export type MutationUpdateCompaniesArgs = {
+  set: CompaniesUpdateInput;
+  where?: InputMaybe<CompaniesFilters>;
+};
+
+
+export type MutationUpdateFileTagsArgs = {
+  set: FileTagsUpdateInput;
+  where?: InputMaybe<FileTagsFilters>;
+};
+
+
+export type MutationUpdateFilesArgs = {
+  set: FilesUpdateInput;
+  where?: InputMaybe<FilesFilters>;
+};
+
+
+export type MutationUpdateTagsArgs = {
+  set: TagsUpdateInput;
+  where?: InputMaybe<TagsFilters>;
+};
+
+
+export type MutationUpdateUsersArgs = {
+  set: UsersUpdateInput;
+  where?: InputMaybe<UsersFilters>;
+};
+
+
+export type MutationUploadFileArgs = {
+  file?: InputMaybe<Scalars['File']['input']>;
+};
+
 /** Order by direction */
 export enum OrderDirection {
   /** Ascending order */
@@ -1104,7 +1246,92 @@ export enum OrderDirection {
 
 export type Query = {
   __typename?: 'Query';
+  companies: Array<CompaniesSelectItem>;
+  companiesSingle?: Maybe<CompaniesSelectItem>;
+  fileTags: Array<FileTagsSelectItem>;
+  fileTagsSingle?: Maybe<FileTagsSelectItem>;
+  files: Array<FilesSelectItem>;
+  filesSingle?: Maybe<FilesSelectItem>;
   me?: Maybe<Me>;
+  tags: Array<TagsSelectItem>;
+  tagsSingle?: Maybe<TagsSelectItem>;
+  users: Array<UsersSelectItem>;
+  usersSingle?: Maybe<UsersSelectItem>;
+};
+
+
+export type QueryCompaniesArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<CompaniesOrderBy>;
+  where?: InputMaybe<CompaniesFilters>;
+};
+
+
+export type QueryCompaniesSingleArgs = {
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<CompaniesOrderBy>;
+  where?: InputMaybe<CompaniesFilters>;
+};
+
+
+export type QueryFileTagsArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<FileTagsOrderBy>;
+  where?: InputMaybe<FileTagsFilters>;
+};
+
+
+export type QueryFileTagsSingleArgs = {
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<FileTagsOrderBy>;
+  where?: InputMaybe<FileTagsFilters>;
+};
+
+
+export type QueryFilesArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<FilesOrderBy>;
+  where?: InputMaybe<FilesFilters>;
+};
+
+
+export type QueryFilesSingleArgs = {
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<FilesOrderBy>;
+  where?: InputMaybe<FilesFilters>;
+};
+
+
+export type QueryTagsArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<TagsOrderBy>;
+  where?: InputMaybe<TagsFilters>;
+};
+
+
+export type QueryTagsSingleArgs = {
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<TagsOrderBy>;
+  where?: InputMaybe<TagsFilters>;
+};
+
+
+export type QueryUsersArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<UsersOrderBy>;
+  where?: InputMaybe<UsersFilters>;
+};
+
+
+export type QueryUsersSingleArgs = {
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  orderBy?: InputMaybe<UsersOrderBy>;
+  where?: InputMaybe<UsersFilters>;
 };
 
 export type RegisterOutput = {
@@ -1690,3 +1917,13 @@ export type UsersUpdatedAtfiltersOr = {
   notInArray?: InputMaybe<Array<Scalars['String']['input']>>;
   notLike?: InputMaybe<Scalars['String']['input']>;
 };
+
+export type LoginMutationVariables = Exact<{
+  values: LoginInput;
+}>;
+
+
+export type LoginMutation = { __typename?: 'Mutation', login?: { __typename?: 'LoginOutput', id?: number | null, firstName?: string | null, token?: string | null, email?: string | null } | null };
+
+
+export const LoginDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"Login"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"values"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"LoginInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"login"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"values"},"value":{"kind":"Variable","name":{"kind":"Name","value":"values"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"token"}},{"kind":"Field","name":{"kind":"Name","value":"email"}}]}}]}}]} as unknown as DocumentNode<LoginMutation, LoginMutationVariables>;
