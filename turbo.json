@@ -13,7 +13,8 @@
     "TOKEN_ISSUER",
     "DEV_TOKEN",
     "AUTH_SECRET",
-    "AUTH_TRUST_HOST"
+    "AUTH_TRUST_HOST",
+    "GRAPHQL_ENDPOINT"
   ],
   "tasks": {
     "build": {
