@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "@repo/sdk": "workspace:*",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -21,6 +22,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@repo/config-eslint": "workspace:*",
+    "@repo/config-prettier": "workspace:*",
+    "@repo/config-typescript": "workspace:*",
     "eslint": "^9",
     "postcss": "^8",
     "tailwindcss": "^4.0.7",
