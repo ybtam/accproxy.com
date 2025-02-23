@@ -14,7 +14,8 @@
     "DEV_TOKEN",
     "AUTH_SECRET",
     "AUTH_TRUST_HOST",
-    "GRAPHQL_ENDPOINT"
+    "GRAPHQL_ENDPOINT",
+    "REACT_EDITOR"
   ],
   "tasks": {
     "build": {

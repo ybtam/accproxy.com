@@ -33,7 +33,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(geistSans.variable, geistMono.variable, 'antialiased', 'p-4')}
+        className={cn(geistSans.variable, geistMono.variable, 'antialiased')}
       >
       <Provider>
         {
