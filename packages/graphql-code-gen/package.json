@@ -1,0 +1,26 @@
+{
+  "name": "@repo/graphql-code-gen",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "version": "0.0.2",
+  "private": true,
+  "scripts": {
+    "gen": "pnpm graphql-codegen",
+    "dev": "pnpm graphql-codegen --watch"
+  },
+  "peerDependencies": {
+    "graphql": "^16.10.0"
+  },
+  "dependencies": {
+    "@graphql-codegen/client-preset": "^4.6.2",
+    "@graphql-codegen/typescript": "^4.1.3",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.5.1"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.5",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@graphql-codegen/schema-ast": "^4.1.0",
+    "@types/node": "^22.13.5"
+  }
+}

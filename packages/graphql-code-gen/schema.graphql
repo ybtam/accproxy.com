@@ -1,0 +1,1599 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+input CompaniesCreatedAtFilters {
+  OR: [CompaniesCreatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input CompaniesCreatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+type CompaniesFilesRelation {
+  companyId: Int!
+  """Date"""
+  createdAt: String
+  filename: String!
+  id: Int!
+  mimeType: String!
+  originalFilename: String!
+  size: Float!
+  storagePath: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input CompaniesFilters {
+  OR: [CompaniesFiltersOr!]
+  createdAt: CompaniesCreatedAtFilters
+  id: CompaniesIdFilters
+  name: CompaniesNameFilters
+  updatedAt: CompaniesUpdatedAtFilters
+  userId: CompaniesUserIdFilters
+}
+
+input CompaniesFiltersOr {
+  createdAt: CompaniesCreatedAtFilters
+  id: CompaniesIdFilters
+  name: CompaniesNameFilters
+  updatedAt: CompaniesUpdatedAtFilters
+  userId: CompaniesUserIdFilters
+}
+
+input CompaniesIdFilters {
+  OR: [CompaniesIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input CompaniesIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input CompaniesInsertInput {
+  """Date"""
+  createdAt: String
+  id: Int
+  name: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+type CompaniesItem {
+  """Date"""
+  createdAt: String
+  id: Int!
+  name: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input CompaniesNameFilters {
+  OR: [CompaniesNamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input CompaniesNamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input CompaniesOrderBy {
+  createdAt: InnerOrder
+  id: InnerOrder
+  name: InnerOrder
+  updatedAt: InnerOrder
+  userId: InnerOrder
+}
+
+type CompaniesSelectItem {
+  """Date"""
+  createdAt: String
+  files(limit: Int, offset: Int, orderBy: FilesOrderBy, where: FilesFilters): [CompaniesFilesRelation!]!
+  id: Int!
+  name: String!
+  """Date"""
+  updatedAt: String
+  user(where: UsersFilters): CompaniesUserRelation
+  userId: Int!
+}
+
+input CompaniesUpdateInput {
+  """Date"""
+  createdAt: String
+  id: Int
+  name: String
+  """Date"""
+  updatedAt: String
+  userId: Int
+}
+
+input CompaniesUpdatedAtFilters {
+  OR: [CompaniesUpdatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input CompaniesUpdatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input CompaniesUserIdFilters {
+  OR: [CompaniesUserIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input CompaniesUserIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type CompaniesUserRelation {
+  """Date"""
+  createdAt: String
+  email: String!
+  firstName: String
+  id: Int!
+  lastName: String
+  password: String!
+  """Date"""
+  updatedAt: String
+}
+
+"""Custom scalar to handle file uploads"""
+scalar File
+
+input FileTagsFileIdFilters {
+  OR: [FileTagsFileIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FileTagsFileIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type FileTagsFileRelation {
+  companyId: Int!
+  """Date"""
+  createdAt: String
+  filename: String!
+  id: Int!
+  mimeType: String!
+  originalFilename: String!
+  size: Float!
+  storagePath: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input FileTagsFilters {
+  OR: [FileTagsFiltersOr!]
+  fileId: FileTagsFileIdFilters
+  tagId: FileTagsTagIdFilters
+}
+
+input FileTagsFiltersOr {
+  fileId: FileTagsFileIdFilters
+  tagId: FileTagsTagIdFilters
+}
+
+input FileTagsInsertInput {
+  fileId: Int!
+  tagId: Int!
+}
+
+type FileTagsItem {
+  fileId: Int!
+  tagId: Int!
+}
+
+input FileTagsOrderBy {
+  fileId: InnerOrder
+  tagId: InnerOrder
+}
+
+type FileTagsSelectItem {
+  file(where: FilesFilters): FileTagsFileRelation
+  fileId: Int!
+  tag(where: TagsFilters): FileTagsTagRelation
+  tagId: Int!
+}
+
+input FileTagsTagIdFilters {
+  OR: [FileTagsTagIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FileTagsTagIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type FileTagsTagRelation {
+  id: Int!
+  name: String!
+  userId: Int!
+}
+
+input FileTagsUpdateInput {
+  fileId: Int
+  tagId: Int
+}
+
+input FilesCompanyIdFilters {
+  OR: [FilesCompanyIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FilesCompanyIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type FilesCompanyRelation {
+  """Date"""
+  createdAt: String
+  id: Int!
+  name: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input FilesCreatedAtFilters {
+  OR: [FilesCreatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesCreatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesFilenameFilters {
+  OR: [FilesFilenamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesFilenamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesFilters {
+  OR: [FilesFiltersOr!]
+  companyId: FilesCompanyIdFilters
+  createdAt: FilesCreatedAtFilters
+  filename: FilesFilenameFilters
+  id: FilesIdFilters
+  mimeType: FilesMimeTypeFilters
+  originalFilename: FilesOriginalFilenameFilters
+  size: FilesSizeFilters
+  storagePath: FilesStoragePathFilters
+  updatedAt: FilesUpdatedAtFilters
+  userId: FilesUserIdFilters
+}
+
+input FilesFiltersOr {
+  companyId: FilesCompanyIdFilters
+  createdAt: FilesCreatedAtFilters
+  filename: FilesFilenameFilters
+  id: FilesIdFilters
+  mimeType: FilesMimeTypeFilters
+  originalFilename: FilesOriginalFilenameFilters
+  size: FilesSizeFilters
+  storagePath: FilesStoragePathFilters
+  updatedAt: FilesUpdatedAtFilters
+  userId: FilesUserIdFilters
+}
+
+input FilesIdFilters {
+  OR: [FilesIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FilesIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FilesInsertInput {
+  companyId: Int!
+  """Date"""
+  createdAt: String
+  filename: String!
+  id: Int
+  mimeType: String!
+  originalFilename: String!
+  size: Float!
+  storagePath: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+type FilesItem {
+  companyId: Int!
+  """Date"""
+  createdAt: String
+  filename: String!
+  id: Int!
+  mimeType: String!
+  originalFilename: String!
+  size: Float!
+  storagePath: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input FilesMimeTypeFilters {
+  OR: [FilesMimeTypefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesMimeTypefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesOrderBy {
+  companyId: InnerOrder
+  createdAt: InnerOrder
+  filename: InnerOrder
+  id: InnerOrder
+  mimeType: InnerOrder
+  originalFilename: InnerOrder
+  size: InnerOrder
+  storagePath: InnerOrder
+  updatedAt: InnerOrder
+  userId: InnerOrder
+}
+
+input FilesOriginalFilenameFilters {
+  OR: [FilesOriginalFilenamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesOriginalFilenamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+type FilesSelectItem {
+  company(where: CompaniesFilters): FilesCompanyRelation
+  companyId: Int!
+  """Date"""
+  createdAt: String
+  filename: String!
+  id: Int!
+  mimeType: String!
+  originalFilename: String!
+  size: Float!
+  storagePath: String!
+  """Date"""
+  updatedAt: String
+  user(where: UsersFilters): FilesUserRelation
+  userId: Int!
+}
+
+input FilesSizeFilters {
+  OR: [FilesSizefiltersOr!]
+  eq: Float
+  gt: Float
+  gte: Float
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Float!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Float
+  lte: Float
+  ne: Float
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Float!]
+  notLike: String
+}
+
+input FilesSizefiltersOr {
+  eq: Float
+  gt: Float
+  gte: Float
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Float!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Float
+  lte: Float
+  ne: Float
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Float!]
+  notLike: String
+}
+
+input FilesStoragePathFilters {
+  OR: [FilesStoragePathfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesStoragePathfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesUpdateInput {
+  companyId: Int
+  """Date"""
+  createdAt: String
+  filename: String
+  id: Int
+  mimeType: String
+  originalFilename: String
+  size: Float
+  storagePath: String
+  """Date"""
+  updatedAt: String
+  userId: Int
+}
+
+input FilesUpdatedAtFilters {
+  OR: [FilesUpdatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesUpdatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input FilesUserIdFilters {
+  OR: [FilesUserIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input FilesUserIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type FilesUserRelation {
+  """Date"""
+  createdAt: String
+  email: String!
+  firstName: String
+  id: Int!
+  lastName: String
+  password: String!
+  """Date"""
+  updatedAt: String
+}
+
+input InnerOrder {
+  direction: OrderDirection!
+  """Priority of current field"""
+  priority: Int!
+}
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+type LoginOutput {
+  email: String
+  firstName: String
+  id: Int
+  lastName: String
+  token: String
+}
+
+type Me {
+  email: String
+  firstName: String
+  id: Int
+  lastName: String
+}
+
+type Mutation {
+  login(values: LoginInput!): LoginOutput
+  register(values: UsersInsertInput): RegisterOutput
+}
+
+"""Order by direction"""
+enum OrderDirection {
+  """Ascending order"""
+  asc
+  """Descending order"""
+  desc
+}
+
+type Query {
+  me: Me
+}
+
+type RegisterOutput {
+  email: String
+  firstName: String
+  id: Int
+  lastName: String
+  token: String
+}
+
+type TagsFileTagsRelation {
+  fileId: Int!
+  tagId: Int!
+}
+
+input TagsFilters {
+  OR: [TagsFiltersOr!]
+  id: TagsIdFilters
+  name: TagsNameFilters
+  userId: TagsUserIdFilters
+}
+
+input TagsFiltersOr {
+  id: TagsIdFilters
+  name: TagsNameFilters
+  userId: TagsUserIdFilters
+}
+
+input TagsIdFilters {
+  OR: [TagsIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input TagsIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input TagsInsertInput {
+  id: Int
+  name: String!
+  userId: Int!
+}
+
+type TagsItem {
+  id: Int!
+  name: String!
+  userId: Int!
+}
+
+input TagsNameFilters {
+  OR: [TagsNamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input TagsNamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input TagsOrderBy {
+  id: InnerOrder
+  name: InnerOrder
+  userId: InnerOrder
+}
+
+type TagsSelectItem {
+  fileTags(limit: Int, offset: Int, orderBy: FileTagsOrderBy, where: FileTagsFilters): [TagsFileTagsRelation!]!
+  id: Int!
+  name: String!
+  userId: Int!
+}
+
+input TagsUpdateInput {
+  id: Int
+  name: String
+  userId: Int
+}
+
+input TagsUserIdFilters {
+  OR: [TagsUserIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input TagsUserIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+type UsersCompaniesRelation {
+  """Date"""
+  createdAt: String
+  id: Int!
+  name: String!
+  """Date"""
+  updatedAt: String
+  userId: Int!
+}
+
+input UsersCreatedAtFilters {
+  OR: [UsersCreatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersCreatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersEmailFilters {
+  OR: [UsersEmailfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersEmailfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersFilters {
+  OR: [UsersFiltersOr!]
+  createdAt: UsersCreatedAtFilters
+  email: UsersEmailFilters
+  firstName: UsersFirstNameFilters
+  id: UsersIdFilters
+  lastName: UsersLastNameFilters
+  password: UsersPasswordFilters
+  updatedAt: UsersUpdatedAtFilters
+}
+
+input UsersFiltersOr {
+  createdAt: UsersCreatedAtFilters
+  email: UsersEmailFilters
+  firstName: UsersFirstNameFilters
+  id: UsersIdFilters
+  lastName: UsersLastNameFilters
+  password: UsersPasswordFilters
+  updatedAt: UsersUpdatedAtFilters
+}
+
+input UsersFirstNameFilters {
+  OR: [UsersFirstNamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersFirstNamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersIdFilters {
+  OR: [UsersIdfiltersOr!]
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input UsersIdfiltersOr {
+  eq: Int
+  gt: Int
+  gte: Int
+  ilike: String
+  """Array<undefined>"""
+  inArray: [Int!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: Int
+  lte: Int
+  ne: Int
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [Int!]
+  notLike: String
+}
+
+input UsersInsertInput {
+  """Date"""
+  createdAt: String
+  email: String!
+  firstName: String
+  id: Int
+  lastName: String
+  password: String!
+  """Date"""
+  updatedAt: String
+}
+
+type UsersItem {
+  """Date"""
+  createdAt: String
+  email: String!
+  firstName: String
+  id: Int!
+  lastName: String
+  password: String!
+  """Date"""
+  updatedAt: String
+}
+
+input UsersLastNameFilters {
+  OR: [UsersLastNamefiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersLastNamefiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersOrderBy {
+  createdAt: InnerOrder
+  email: InnerOrder
+  firstName: InnerOrder
+  id: InnerOrder
+  lastName: InnerOrder
+  password: InnerOrder
+  updatedAt: InnerOrder
+}
+
+input UsersPasswordFilters {
+  OR: [UsersPasswordfiltersOr!]
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersPasswordfiltersOr {
+  eq: String
+  gt: String
+  gte: String
+  ilike: String
+  """Array<undefined>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  lt: String
+  lte: String
+  ne: String
+  notIlike: String
+  """Array<undefined>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+type UsersSelectItem {
+  companies(limit: Int, offset: Int, orderBy: CompaniesOrderBy, where: CompaniesFilters): [UsersCompaniesRelation!]!
+  """Date"""
+  createdAt: String
+  email: String!
+  firstName: String
+  id: Int!
+  lastName: String
+  password: String!
+  """Date"""
+  updatedAt: String
+}
+
+input UsersUpdateInput {
+  """Date"""
+  createdAt: String
+  email: String
+  firstName: String
+  id: Int
+  lastName: String
+  password: String
+  """Date"""
+  updatedAt: String
+}
+
+input UsersUpdatedAtFilters {
+  OR: [UsersUpdatedAtfiltersOr!]
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
+
+input UsersUpdatedAtfiltersOr {
+  """Date"""
+  eq: String
+  """Date"""
+  gt: String
+  """Date"""
+  gte: String
+  ilike: String
+  """Array<Date>"""
+  inArray: [String!]
+  isNotNull: Boolean
+  isNull: Boolean
+  like: String
+  """Date"""
+  lt: String
+  """Date"""
+  lte: String
+  """Date"""
+  ne: String
+  notIlike: String
+  """Array<Date>"""
+  notInArray: [String!]
+  notLike: String
+}
